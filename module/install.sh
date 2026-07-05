@@ -21,14 +21,7 @@ ui_print " "
 # Bắt đầu cài đặt
 on_install() {
 # list partition
-for vc in $(cat "$TMPDIR/partition.txt"); do
-echo "  Overlayfs: $vc"
-sleep 0.01
-done
-# Create partition
-cp -rf $TMPDIR/partition.txt $MODPATH
-cp -rf $TMPDIR/action.sh $MODPATH
-ui_print " "
+true
 }
 
 # Cấp quyền
