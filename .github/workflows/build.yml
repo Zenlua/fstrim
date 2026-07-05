@@ -18,9 +18,4 @@ jobs:
           tag_name: ${{ env.VER }}
           files: Up/*
           body_path: log.txt
-      - name: Upload json
-        uses: softprops/action-gh-release@v1
-        with:
-          name: Tmp
-          tag_name: tmp
-          files: tmp2/*
+
