@@ -1,2 +1,0 @@
-# Auto grant permissions to avoid bootloop
-ro.control_privapp_permissions=log
