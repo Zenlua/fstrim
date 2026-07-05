@@ -1,0 +1,26 @@
+name: Build module
+on:
+  workflow_dispatch:
+permissions: write-all
+jobs:
+  build:
+    name: 'Build Zip'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: See process
+        run: |
+          bash .github/Shell.sh
+      - name: Upload zip
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Overlayfs ${{ env.VUR }}
+          tag_name: ${{ env.VER }}
+          files: Up/*
+          body_path: log.txt
+      - name: Upload json
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Tmp
+          tag_name: tmp
+          files: tmp2/*
